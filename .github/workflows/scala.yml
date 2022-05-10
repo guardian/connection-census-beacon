@@ -28,7 +28,7 @@ jobs:
       shell: bash
       run: |
         echo GITHUB_RUN_NUMBER=${GITHUB_RUN_NUMBER} >> $GITHUB_ENV
-        echo JAVA_OPTS="-Dbuild.number=${GITHUB_RUN_NUMBER} >> $GITHUB_ENV
+        echo JAVA_OPTS="-Dbuild.number=${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
 
     - name: Run tests
       run: sbt test
