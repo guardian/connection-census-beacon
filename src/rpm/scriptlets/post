@@ -7,6 +7,6 @@ mkdir -p $DATA_DIR
 
 dd if=/dev/urandom of=$DATA_DIR/small.dat bs=1k count=100
 dd if=/dev/urandom of=$DATA_DIR/medium.dat bs=1k count=1024
-dd if=/dev/urandom of=$DATA_DIR/large.dat bs=1k count=10240
+dd if=/dev/urandom of=$DATA_DIR/large.dat bs=1k count=30720
 
 echo Data is configured
