@@ -46,16 +46,16 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Tarball
-        path: target/universal/connection_census_beacon-1.0.tgz
+        path: target/universal/connection-census-beacon-1.0.tgz
 
     - name: Publish RPM
       uses: actions/upload-artifact@v3
       with:
         name: RPM
-        path: target/rpm/RPMS/noarch/connection_census_beacon-1.0-${GITHUB_RUN_NUMBER}.noarch.rpm
+        path: target/rpm/RPMS/noarch/connection-census-beacon-1.0-${{ env.GITHUB_RUN_NUMBER }}.noarch.rpm
 
     - name: Publish DEB
       uses: actions/upload-artifact@v3
       with:
         name: DEB
-        path: target/connection-census-beacon_1.0-${GITHUB_RUN_NUMBER}_all.deb
+        path: target/connection-census-beacon_1.0-${{ env.GITHUB_RUN_NUMBER }}_all.deb
