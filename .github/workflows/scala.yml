@@ -36,6 +36,12 @@ jobs:
     - name: Build and package
       run: sbt universal:packageZipTarball rpm:packageBin debian:packageBin
 
+    - name: Debugging
+      run: |
+        ls -lh target
+        ls -lh target/rpm/RPMS/noarch
+        ls -lh target/universal
+
     - name: Publish tarball
       uses: actions/upload-artifact@v3
       with:
