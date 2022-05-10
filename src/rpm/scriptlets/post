@@ -1,0 +1,12 @@
+#!/bin/bash -e
+
+echo Setting up test data...
+DATA_DIR=/usr/share/connection_census_beacon/files
+
+mkdir -p $DATA_DIR
+
+dd if=/dev/urandom of=$DATA_DIR/small.dat bs=1k count=100
+dd if=/dev/urandom of=$DATA_DIR/medium.dat bs=1k count=1024
+dd if=/dev/urandom of=$DATA_DIR/large.dat bs=1k count=10240
+
+echo Data is configured
