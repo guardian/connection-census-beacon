@@ -23,7 +23,7 @@ jobs:
         distribution: 'temurin'
 
     # GITHUB_RUN_NUMBER always starts from 1, so to maintain compatibility we adjust it here
-    - name: Make GITHUB_RUN_NUMBER env var available outside of shells
+    - name: Make GITHUB_RUN_NUMBER env var available to Java
       working-directory: ${{env.GITHUB_WORKSPACE}}
       shell: bash
       run: |
@@ -46,10 +46,10 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: RPM
-        path: target/rpm/RPMS/noarch/connection_census_beacon-1.0-${{GITHUB_RUN_NUMBER}}.noarch.rpm
+        path: target/rpm/RPMS/noarch/connection_census_beacon-1.0-${GITHUB_RUN_NUMBER}.noarch.rpm
 
     - name: Publish DEB
       uses: actions/upload-artifact@v3
       with:
         name: DEB
-        path: target/connection-census-beacon_1.0-${{GITHUB_RUN_NUMBER}}_all.deb
+        path: target/connection-census-beacon_1.0-${GITHUB_RUN_NUMBER}_all.deb
